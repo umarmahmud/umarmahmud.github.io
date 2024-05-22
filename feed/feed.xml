@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="en">
+	<title>Umar Mahmud</title>
+	<subtitle>A technical blog on Python, JavaScript, TypeScript, Web Development, Clojure and functional programming.</subtitle>
+	<link href="https://umarmahmud.com/feed/feed.xml" rel="self"/>
+	<link href="https://umarmahmud.com/"/>
+	<updated>2024-05-22T00:00:00Z</updated>
+	<id>https://umarmahmud.com</id>
+	<author>
+		<name>Umar Mahmud</name>
+		<email></email>
+	</author>
+	
+	<entry>
+		<title>Shared Responsibility Model</title>
+		<link href="https://umarmahmud.com/blog/essential-topics-for-technical-interviews/"/>
+		<updated>2024-05-22T00:00:00Z</updated>
+		<id>https://umarmahmud.com/blog/essential-topics-for-technical-interviews/</id>
+		<content type="html">&lt;p&gt;It is essential for cloud practitioners to understand the Shared Responsibility Model. The Shared Responsibility Model is a security framework that splits the responsibility of securing all aspects of the cloud, including physical hardware, networks, software, configurations and data between cloud providers and customers. Cloud providers are responsible for securing the underlying infrastructure of the cloud, while customers are responsible for their data, configurations and other aspects of the cloud environment that may vary depending on the services they make use of.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Setting Up a Python Development Environment for macOS</title>
+		<link href="https://umarmahmud.com/blog/working-with-python-on-macos/"/>
+		<updated>2023-12-31T00:00:00Z</updated>
+		<id>https://umarmahmud.com/blog/working-with-python-on-macos/</id>
+		<content type="html">&lt;p&gt;&lt;em&gt;Note: This guide uses macOS 13 or higher, the zsh shell and the brew package manager&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;A working Python installation will include a Python interpreter as well as associated Python libraries. On macOS, there is a &lt;em&gt;system&lt;/em&gt; installation of Python that must &lt;strong&gt;NOT&lt;/strong&gt; be modified or removed. This installation is located at &lt;code&gt;/System/Library/Frameworks/Python.framework&lt;/code&gt;  with a symlink in  &lt;code&gt;/usr/bin/python&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;DO NOT&lt;/strong&gt; use the system Python (sometimes referred to as &amp;quot;default Python&amp;quot;) for Python development. Instead, install your own version of Python. The best way to install and manage your own Python versions is through &lt;a href=&quot;https://github.com/pyenv/pyenv&quot;&gt;pyenv&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;installing-pyenv&quot; tabindex=&quot;-1&quot;&gt;Installing pyenv &lt;a class=&quot;header-anchor&quot; href=&quot;https://umarmahmud.com/blog/working-with-python-on-macos/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I prefer to install &lt;em&gt;pyenv&lt;/em&gt; using brew.&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; pyenv&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, add &lt;em&gt;pyenv&lt;/em&gt; to your shell environment (zsh).&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;export PYENV_ROOT=&quot;$HOME/.pyenv&quot;&#39;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt; ~/.zshrc
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;[[ -d $PYENV_ROOT/bin ]] &amp;amp;&amp;amp; export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;&#39;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt; ~/.zshrc
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;eval &quot;$(pyenv init -)&quot;&#39;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt; ~/.zshrc&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Restart your shell.&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token environment constant&quot;&gt;$SHELL&lt;/span&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Install your desired version of Python.&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;pyenv &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;version&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Set your installed version as the global default.&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;pyenv global &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;version&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;installing-packages&quot; tabindex=&quot;-1&quot;&gt;Installing Packages &lt;a class=&quot;header-anchor&quot; href=&quot;https://umarmahmud.com/blog/working-with-python-on-macos/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;When installing packages, make a habit of using the &lt;em&gt;-m&lt;/em&gt;  flag to make sure you are using the correct python interpreter with &lt;em&gt;pip&lt;/em&gt;:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;python &lt;span class=&quot;token parameter variable&quot;&gt;-m&lt;/span&gt; pip &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;package-name&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When using &lt;em&gt;pyenv&lt;/em&gt;, &lt;em&gt;pip&lt;/em&gt; should install packages in the Python installation’s own &lt;em&gt;site-packages&lt;/em&gt; folder, different from the system’s &lt;em&gt;site-packages&lt;/em&gt; folder. Example directory that &lt;em&gt;pyenv&lt;/em&gt; will use (version set as 3.8.10):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/Users/umar/.pyenv/versions/3.8.10/lib/python3.8/site-packages&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;working-with-virtual-environments&quot; tabindex=&quot;-1&quot;&gt;Working with Virtual Environments &lt;a class=&quot;header-anchor&quot; href=&quot;https://umarmahmud.com/blog/working-with-python-on-macos/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Usually, you will not want to install packages directly into your &lt;em&gt;site-packages&lt;/em&gt; directory. Instead, you will want to create virtual environments for your specific projects. This is natural since each project will likely have different dependecies associated with it.&lt;/p&gt;
+&lt;p&gt;pyenv-virtualenv is a &lt;em&gt;pyenv&lt;/em&gt; plugin that makes it easy to create virtual environments. Install with brew:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; pyenv-virtualenv&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Append your &lt;em&gt;.zshrc&lt;/em&gt; file with the following and then restart your current shell session.&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;pyenv virtualenv-init -&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Create a virtual environment.&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;pyenv virtualenv &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;version&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;environment-name&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Activation of the newly created environment should be done locally in your project directory. &lt;em&gt;cd&lt;/em&gt; to your directory and activate the newly created environment:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;pyenv &lt;span class=&quot;token builtin class-name&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;environnment-name&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Confirm the activation with &lt;code&gt;pyenv which python&lt;/code&gt; and you should see something like: &lt;code&gt;/Users/umar/.pyenv/versions/&amp;lt;environment-name&amp;gt;/bin/python&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Activation of a virtual environment with pyenv-virtualenv will create a &lt;code&gt;.python-version&lt;/code&gt; file in your project. If you are using git, it is a good idea to gitignore this file.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Now, any necessary package(s) for the environment can be installed.&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;pip &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;package-name&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As soon as you &lt;em&gt;cd&lt;/em&gt; out of your project folder, the virtual environment will become deactivated.&lt;/p&gt;
+&lt;p&gt;Next time you need to activate your virtual environment, simply &lt;em&gt;cd&lt;/em&gt;-ing into the project folder should do it.&lt;/p&gt;
+&lt;h2 id=&quot;using-virtual-environments-with-jupyter-notebooks&quot; tabindex=&quot;-1&quot;&gt;Using Virtual Environments with Jupyter Notebooks &lt;a class=&quot;header-anchor&quot; href=&quot;https://umarmahmud.com/blog/working-with-python-on-macos/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Virtual environments can be created and added to Jupyter Notebooks as kernels.&lt;/p&gt;
+&lt;p&gt;To configure a virtual environment for Jupyter, first navigate to the folder for your notebook. Next, create a virtual environment with pyenv and activate it locally in your folder.&lt;/p&gt;
+&lt;p&gt;Then, inside your virtual environment, install the &lt;em&gt;ipykernel&lt;/em&gt; package with pip and run&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;ipython kernel &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--user&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--name&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;environment-name&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You are free to deactivate the virtual environment now. Of course you must activate it again (simply &lt;em&gt;cd&lt;/em&gt;-ing to the notebook folder should accomplish this) to install any additional packages.&lt;/p&gt;
+&lt;p&gt;Start the server on localhost with&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;python &lt;span class=&quot;token parameter variable&quot;&gt;-m&lt;/span&gt; jupyterlab&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You should now see the newly added kernel in the user interface.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;useful-commands&quot; tabindex=&quot;-1&quot;&gt;Useful commands &lt;a class=&quot;header-anchor&quot; href=&quot;https://umarmahmud.com/blog/working-with-python-on-macos/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;python -m site&lt;/code&gt;  shows the location of the packages folder(s)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pip list&lt;/code&gt; shows ALL installed packages, whether or not they were installed using &lt;code&gt;pip&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pip freeze&lt;/code&gt;  shows all packages installed using &lt;code&gt;pip&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pip show &amp;lt;package-name&amp;gt;&lt;/code&gt; shows package info, including location&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pyenv versions&lt;/code&gt; shows all Python versions with current version starred&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pyenv virtualenvs&lt;/code&gt; list existing virtual environments&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pyenv uninstall &amp;lt;environment-name&amp;gt;&lt;/code&gt; delete a virtual environment&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;jupyter kernelspec list&lt;/code&gt; list all kernels in jupyter&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;jupyter kernelspec uninstall kernel&lt;/code&gt; remove kernel from jupyter&lt;/p&gt;
+</content>
+	</entry>
+</feed>
